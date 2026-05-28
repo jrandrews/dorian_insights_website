@@ -1112,3 +1112,34 @@ footer a:hover { color: var(--accent-ink); border-bottom-color: var(--accent-ink
 .hero-about a { color: #FFFFFF; }
 .hero a:hover,
 .hero-about a:hover { color: var(--accent); }
+
+/* ==========================================================================
+   CONTACT BOOKING (Google Appointment Scheduling button)
+   ========================================================================== */
+
+.contact-booking {
+  margin: 2.5rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Divider between the booking shortcut and the form */
+.contact-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem auto 0;
+  max-width: 640px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+}
+.contact-divider::before,
+.contact-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}

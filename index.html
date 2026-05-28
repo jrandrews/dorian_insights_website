@@ -370,6 +370,27 @@
     <span class="eyebrow reveal">Inquiries</span>
     <h2 class="reveal">Let's talk about what's not working <span class="quiet">— and what a meaningful outcome looks like.</span></h2>
 
+    <!-- Google Calendar Appointment Scheduling button -->
+    <div class="contact-booking reveal">
+      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+      <script>
+      (function() {
+        var target = document.currentScript;
+        window.addEventListener('load', function() {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2yZAt4o1tI0kNiuIGW5iHlMNpJpkZ7GZTIgVB6OPQAb4NPMPqy3JndE92pA-ckX_7vWvsflC_8?gv=true',
+            color: '#1B1464',
+            label: 'Book an intro call',
+            target: target,
+          });
+        });
+      })();
+      </script>
+    </div>
+
+    <p class="contact-divider reveal"><span>or send a detailed message</span></p>
+
     <form
       class="contact-form reveal"
       name="contact"
