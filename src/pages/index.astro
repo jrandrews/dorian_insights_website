@@ -1,38 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dorian Insights — Making Your Data and Decisions Simpler</title>
-<meta name="description" content="Dorian Insights makes your data and your decisions simpler — guiding executives and business owners from complicated, unreliable analytics to clear, trusted answers. Schedule a call.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<!-- =========================================================== -->
-<!-- NAV                                                          -->
-<!-- =========================================================== -->
-<nav>
-  <div class="container">
-    <div class="brand">
-      <span class="brand-mark"></span>
-      <a href="index.html">Dorian Insights</a>
-    </div>
-    <ul>
-      <li><a href="index.html#plan">How It Works</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#engagement">Engagement</a></li>
-      <li><a href="index.html#work">Results</a></li>
-      <li><a href="about.html">About</a></li>
-      <li class="always"><a class="inquire" href="index.html#contact">Schedule a Call</a></li>
-    </ul>
-  </div>
-</nav>
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Dorian Insights — Making Your Data and Decisions Simpler"
+  description="Dorian Insights makes your data and your decisions simpler — guiding executives and business owners from complicated, unreliable analytics to clear, trusted answers. Schedule a call."
+>
 
 <!-- =========================================================== -->
 <!-- HERO — the customer's desire, and one clear next step        -->
@@ -401,7 +373,7 @@
       <article class="work-item">
         <div class="work-meta">
           <div class="industry">Technology Consultancy</div>
-          <div class="stack">BigQuery · FP&A KPI Platform</div>
+          <div class="stack">BigQuery · FP&amp;A KPI Platform</div>
           <div class="tags">
             <span>Platform</span>
             <span>ML</span>
@@ -445,8 +417,8 @@
     <!-- Google Calendar Appointment Scheduling button -->
     <div class="contact-booking reveal">
       <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-      <script>
+      <script is:inline src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+      <script is:inline>
       (function() {
         var target = document.currentScript;
         window.addEventListener('load', function() {
@@ -467,7 +439,7 @@
       class="contact-form reveal"
       name="contact"
       method="POST"
-      action="/thanks.html"
+      action="/thanks/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
@@ -520,29 +492,4 @@
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div>© Dorian Insights, L.L.C.</div>
-    <div><a href="https://www.linkedin.com/in/joshuaroyandrews/" target="_blank" rel="noopener">LinkedIn</a> · Making your data and decisions simpler</div>
-  </div>
-</footer>
-
-<script>
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          e.target.classList.add('in-view');
-          io.unobserve(e.target);
-        }
-      }
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-  );
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
-</script>
-
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4cf385ff90cd4da986df4f05c51cfb6f"}'></script><!-- End Cloudflare Web Analytics -->
-
-</body>
-</html>
+</Base>

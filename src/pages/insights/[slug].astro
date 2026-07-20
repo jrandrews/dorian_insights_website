@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('insights', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+});
+---
+<Base title={`${post.data.title} — Dorian Insights`} description={post.data.description}>
+
+<header class="hero hero-compact" id="top">
+  <div class="container">
+    <span class="eyebrow reveal">Insights · {fmt}</span>
+    <h1 class="reveal">{post.data.title}</h1>
+    <div class="hero-body">
+      <div class="reveal">
+        <p class="lede">{post.data.description}</p>
+        <p class="post-byline">Josh Andrews · Principal, Dorian Insights</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="post-article">
+  <div class="container">
+    <div class="prose">
+      <Content />
+    </div>
+
+    <div class="post-foot">
+      <a class="contact-secondary" href="/insights/">← All insights</a>
+      <a class="contact-secondary" href="/#contact">Talk to us about your data <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</Base>
