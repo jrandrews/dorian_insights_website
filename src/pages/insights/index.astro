@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('insights', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base
+  title="Insights — Dorian Insights"
+  description="Writing on data, analytics, AI, and the organizations that use them — practical, plain-language essays from the desk of Dorian Insights."
+>
+
+<header class="hero hero-compact" id="top">
+  <div class="container">
+    <span class="eyebrow reveal">Insights</span>
+    <h1 class="reveal">Notes from the field. <span class="quiet">Data, decisions, and the people between them.</span></h1>
+    <div class="hero-body">
+      <div class="reveal">
+        <p class="lede">
+          Medium-to-long-form writing on data platforms, analytics, AI, and the organizational work that makes them pay off. The same plain language we use with clients — technical when it helps, never technical for its own sake.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="post-index">
+  <div class="container">
+    {posts.length === 0 ? (
+      <p class="posts-empty">First post coming soon — subscribe via <a href="/rss.xml">RSS</a> to catch it.</p>
+    ) : (
+      <div class="post-list reveal-stagger">
+        {posts.map((post) => (
+          <article class="post-item">
+            <div class="post-date">{fmt(post.data.date)}</div>
+            <div class="post-item-body">
+              <h3><a href={`/insights/${post.id}/`}>{post.data.title}</a></h3>
+              <p>{post.data.description}</p>
+              <a class="post-more" href={`/insights/${post.id}/`}>Read the post <span class="arrow">→</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+
+    <p class="posts-foot">
+      Prefer a feed? <a href="/rss.xml">Subscribe via RSS</a> — an email edition is coming soon.
+    </p>
+  </div>
+</section>
+
+</Base>

@@ -1,0 +1,23 @@
+# Netlify configuration — overrides dashboard build settings.
+# The site is built by Astro into dist/; Netlify Forms still works because the
+# contact form (data-netlify="true") is present in the prerendered HTML.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Preserve old hand-authored URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/thanks.html"
+  to = "/thanks/"
+  status = 301
