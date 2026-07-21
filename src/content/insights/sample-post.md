@@ -2,6 +2,7 @@
 title: "Sample post: what an Insights essay looks like"
 description: "A demonstration of the post formatting available here — headings, code, tables, and pull quotes. Delete this file (src/content/insights/sample-post.md) before launch."
 date: 2026-07-20
+draft: true
 ---
 
 This is a sample post so you can judge the reading experience before the first real essay ships. Publishing a post is just adding a Markdown file to `src/content/insights/` — this whole page was generated from one. **Delete this file before going live.**
