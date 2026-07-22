@@ -32,7 +32,12 @@ const { title, description, noindex = false } = Astro.props;
       <span class="brand-mark"></span>
       <a href="/">Dorian Insights</a>
     </div>
-    <ul>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="/#plan">How It Works</a></li>
       <li><a href="/#services">Services</a></li>
       <li><a href="/#engagement">Engagement</a></li>
@@ -66,6 +71,23 @@ const { title, description, noindex = false } = Astro.props;
     { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
   );
   document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
+</script>
+
+<script is:inline>
+  const nav = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.querySelectorAll('#nav-menu a').forEach((a) =>
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    })
+  );
 </script>
 
 <!-- Cloudflare Web Analytics --><script is:inline defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4cf385ff90cd4da986df4f05c51cfb6f"}'></script><!-- End Cloudflare Web Analytics -->

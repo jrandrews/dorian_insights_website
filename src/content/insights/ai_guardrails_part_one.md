@@ -13,7 +13,7 @@ We've all run into the problems of AI hallucination, or, even worse, the appeara
 Issues with these approaches:
 
 <ul>
-<li>They are often from the perspective of the individual practicioner but don't address the team communication, approach, and change management challenges. 
+<li>They are often from the perspective of the individual practitioner but don't address the team communication, approach, and change management challenges. 
 <li>They don't provide a systematic application of software development tools and principles in an organized and consistent way which allows thinking about the problem as a process and management issues - not just a technical execution issue. 
 <li>They quickly become outdated as new models are published, frontier model tooling and harnesses are updated, and business models change.
 </ul>
@@ -67,7 +67,7 @@ Each of these checklist items is a subdiscipline unto itself - we are only scrat
 - [ ] **Integrate Automated Testing, Formatters, Linters, and Other Tools into AI Development Harnesses**
     - **What it is:** Automated testing and other software tools appeared previously in this checklist. However, have they been integrated into the AI coding harnesses that your team uses on a minute-by-minute basis while pair programming with an AI coding agent? <BR><BR> For example, if coding in Python, a Python linter and formatter should be included in the developer's coding harness so that any edit the AI agent makes to Python code is immediately evaluated according to the configured rules. This allows for a great speedup in development cycles as the AI can immediately receive feedback from another deterministic process correcting the coding changes that it has made. 
     - **The risk without it:** That incorrect code or bad formatting will, at a minimum, have to be manually reviewed and corrected by the developer rather than automatically being caught and fixed by the AI. Or, worse, that the incorrect code will be submitted by the developer into the main codebase without these errors or issues ever being caught. <BR><BR> Having this integrated into the AI harness will also reduce the impact of memory loss across sessions which impacts productivity and consistency.
-    - **AI Benefit:** Significant speedup of code development and reduction of effort on the part of development teams. <BR><BR> Increased code quality and maintainability. <BR><BR> Greater consistency between team members on differing teams, at differing skill levels, and and differing times.
+    - **AI Benefit:** Significant speedup of code development and reduction of effort on the part of development teams. <BR><BR> Increased code quality and maintainability. <BR><BR> Greater consistency between team members on differing teams, at differing skill levels, and at differing times.
 
 In future posts I will get into more detail about what each of these mean and how they can be deployed within an organization. I will also talk more about some project management techniques for technology teams and how they can be adapted for improved AI development productivity. One example is the importance of restricting developer and AI Agent Access from Production environments - or at a minimum restricting it to read-only access for areas that are vetted to not have PII and other sensitive data.
 
