@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<title>Dorian Insights — call background (minimal)</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: #15104E; }
+
+  /* Quietest option: brand field + small mark only. Nothing to read, nothing to track. */
+  .stage {
+    position: relative;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background:
+      radial-gradient(1000px 800px at 86% 6%, rgba(245,166,35,0.10), transparent 64%),
+      linear-gradient(165deg, #221A72 0%, #1B1464 46%, #14104A 100%);
+  }
+
+  .vignette {
+    position: absolute; inset: 0;
+    background: radial-gradient(1560px 1040px at 50% 54%,
+      rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.30) 100%);
+  }
+
+  .lockup { position: absolute; left: 120px; top: 100px; display: flex; align-items: center; gap: 16px; }
+  .mark { width: 17px; height: 17px; background: #F5A623; border-radius: 2px; }
+  .name {
+    font-size: 38px; font-weight: 500; letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.92); line-height: 1;
+  }
+</style>
+
+<div class="stage">
+  <div class="vignette"></div>
+  <div class="lockup">
+    <span class="mark"></span>
+    <span class="name">Dorian Insights</span>
+  </div>
+</div>
