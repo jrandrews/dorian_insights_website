@@ -6,6 +6,11 @@
   command = "npm run build"
   publish = "dist"
 
+# Astro 7 needs Node >= 22.12. Netlify otherwise keeps whatever Node it pinned
+# on the site's first build, so state the major version here (latest 22.x).
+[build.environment]
+  NODE_VERSION = "22"
+
 # Preserve old hand-authored URLs
 [[redirects]]
   from = "/index.html"
