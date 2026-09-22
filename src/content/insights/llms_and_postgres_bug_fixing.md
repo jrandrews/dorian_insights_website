@@ -1,6 +1,6 @@
 ---
-title: "Are LLMs Changing How Postgres Gets Fixed? What the Project's Own Data Says"
-description: "Changelogs, CVEs, mailing lists, and git history from the PostgreSQL project, read for the fingerprints of AI-assisted bug discovery and fixing in 2026"
+title: "Impact of AI and LLMs on Software Development - Will We Be Overwhelmed?"
+description: "Using the PostgreSQL project to see trends in AI impact on software development, particularly bugs and vulnerabilities"
 date: 2026-09-18
 ---
 
@@ -177,6 +177,8 @@ Greg Kroah-Hartman came to a similar conclusion about the impact of LLMs on open
 1. Expect elevated bugfix and security vulnerability rates for a while until we get the codebases up to the new standards
 1. There are some exciting new possibilities as well, it isn’t all doom and gloom
 
+There are some similarities between Postgres and Linux kernel development that may not apply to other software projects. They both are long-running projects with pre-existing structure and governance mechanisms, including source code management, patch review processes, release schedules, and significant existing volunteers and staff. Software projects that don't have this in place, including smaller and less well-organized open source projects and also commercial closed-source projects, may have a harder time adapting and be more easily overwhelmed. If you're a technology leader and considering which software projects or dependencies to include in your tech stack, I'd suggest taking a closer look at the rate of bug reporting, triage, and fix issuance. It's likely to be a more challenging time to start or run smaller and less well-resourced software projects because you're likely to have a flood of vulnerability and bug reporting that you need to be prepared to manage.
+
 Doing a more rigorous statistical trending analysis to back up my intuition about future growth is another significant chunk of work. I feel like this has already been a lengthy blog article, and we’ve arrived at a good stopping point. As time permits, I’ll return to this theme and take up the question of the future.
 
 ## The Code
@@ -187,4 +189,4 @@ If you felt this article was useful, and would like help implementing analytics 
 
 ## Disclaimer
 
-Disclaimer: I wrote this article myself, by hand. “Writing is thinking” to me, and I don’t want to lose my ability to think by delegating it to AI. I did use AI to review and critique my article after I drafted it, and I did incorporate a significant number of its suggestions. Also, a good proportion of the underlying codebase used to ingest the data, do the cleansing and transformations, and create the charts, was written by Claude. I did write a good chunk of the code myself, I architected the solution and designed the data model, I asked the questions, and I read most of the code. This wasn’t “vibe coded.” Part of the point of this coding project was to explore productivity augmentation with AI-assisted development and a properly configured harness while at the same time making sure the developer (me, in this case) ultimately retains control and responsibility.
+I wrote this article myself, by hand. “Writing is thinking” to me, and I don’t want to lose my ability to think by delegating it to AI. I did use AI to review and critique my article after I drafted it, and I did incorporate a significant number of its suggestions. Also, a good proportion of the underlying codebase used to ingest the data, do the cleansing and transformations, and create the charts, was written by Claude. I did write a good chunk of the code myself, I architected the solution and designed the data model, I asked the questions, and I read most of the code. This wasn’t “vibe coded.” Part of the point of this coding project was to explore productivity augmentation with AI-assisted development and a properly configured harness while at the same time making sure the developer (me, in this case) ultimately retains control and responsibility.
